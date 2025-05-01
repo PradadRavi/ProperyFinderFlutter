@@ -54,7 +54,6 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
               keyboardType: TextInputType.number,
               textInputAction: TextInputAction.done,
               onChanged: (value) {
-                print("BLACK PRESS");
                 _onOtpChanged(value, index);
               },
               controller: _controllers[index],
