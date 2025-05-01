@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:propertyfinder/core/common/widgets/otp_input.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/widgets/heading_widget.dart';
 
@@ -14,6 +15,12 @@ class OtpEnterWidget extends StatelessWidget {
           firstHeadingName: AppStrings.otpIsOnTheWay,
           subName: AppStrings.enterTheOtpSent,
           showEditText: true,
+        ),
+        OtpInput(
+          box: 6,
+          getOtp: (otp) {
+            print(otp);
+          },
         )
         // Text(
         //   AppStrings.otpIsOnTheWay,

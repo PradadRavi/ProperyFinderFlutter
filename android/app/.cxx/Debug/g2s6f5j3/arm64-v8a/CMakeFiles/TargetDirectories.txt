@@ -1,0 +1,2 @@
+/Users/ravi/Projects/Don't tuch/ProperyFinderFlutter/android/app/.cxx/Debug/g2s6f5j3/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/ravi/Projects/Don't tuch/ProperyFinderFlutter/android/app/.cxx/Debug/g2s6f5j3/arm64-v8a/CMakeFiles/rebuild_cache.dir

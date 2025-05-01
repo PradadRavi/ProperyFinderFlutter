@@ -3,8 +3,8 @@ import 'package:propertyfinder/core/common/widgets/feature_of_property_list.dart
 import 'package:propertyfinder/core/common/widgets/horizontal_round_button.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 
-class OnBoardingView extends StatelessWidget {
-  const OnBoardingView({super.key});
+class OnBoardingScreen extends StatelessWidget {
+  const OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
