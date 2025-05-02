@@ -16,12 +16,21 @@ class OtpEnterWidget extends StatelessWidget {
           subName: AppStrings.enterTheOtpSent,
           showEditText: true,
         ),
+        const SizedBox(
+          height: 50,
+        ),
         OtpInput(
-          box: 6,
+          box: 4,
           getOtp: (otp) {
             print(otp);
           },
-        )
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+
+        Text(AppStrings.resendOtpIn)
+
         // Text(
         //   AppStrings.otpIsOnTheWay,
         //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

@@ -28,9 +28,7 @@ class RoundRectangleIconText extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              AppIcons.agricultureLandIcon,
-            ),
+            Icon(icon),
             const SizedBox(
               height: 4,
             ),

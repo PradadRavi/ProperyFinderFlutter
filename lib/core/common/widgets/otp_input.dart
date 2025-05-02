@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:propertyfinder/core/extensions/context_extensions.dart';
+import 'package:propertyfinder/core/res/app_colors.dart';
 
 class OtpInput extends StatefulWidget {
   const OtpInput({super.key, required this.box, required this.getOtp});
@@ -43,14 +45,22 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double spacing = 12;
+    final double totalSpacing = spacing * (widget.box - 1);
+    final double boxSize = (screenWidth - totalSpacing - 100) / widget.box;
+    print("${context.width}");
     return Row(
-      spacing: 4,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
         widget.box,
         (index) {
-          return Expanded(
+          return SizedBox(
+            height: boxSize,
+            width: boxSize,
             child: TextField(
               maxLength: 1,
+              textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
               textInputAction: TextInputAction.done,
               onChanged: (value) {
@@ -58,7 +68,21 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
               },
               controller: _controllers[index],
               focusNode: _focusNodes[index],
-              decoration: InputDecoration(),
+              buildCounter: (context,
+                      {required currentLength,
+                      required isFocused,
+                      required maxLength}) =>
+                  null,
+              cursorHeight: 18,
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: 22),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                    color: AppColors.borderGreyColor,
+                  ),
+                ),
+              ),
             ),
           );
         },
@@ -70,7 +94,7 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
     if (value.length == 1 && index < widget.box) {
       _focusNodes[index + 1].requestFocus();
     } else if (value.isEmpty && index > 0) {
-      print("call $value"); //Done
+      print("call $value");
       _focusNodes[index - 1].requestFocus();
     }
     widget.getOtp(_controllers.map((e) => e.text).join());

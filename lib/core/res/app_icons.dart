@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 abstract final class AppIcons {
   // cannot be extended
-  static const String family = "icommon";
+  static const String family = "icomoon";
   static const IconData arrowIcon = IconData(0xe900, fontFamily: family);
   static const IconData propertyMapIcon = IconData(0xe90b, fontFamily: family);
   static const IconData agricultureLandIcon =
