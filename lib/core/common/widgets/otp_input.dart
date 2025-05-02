@@ -70,7 +70,7 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
     if (value.length == 1 && index < widget.box) {
       _focusNodes[index + 1].requestFocus();
     } else if (value.isEmpty && index > 0) {
-      print("call $value");
+      print("call $value"); //Done
       _focusNodes[index - 1].requestFocus();
     }
     widget.getOtp(_controllers.map((e) => e.text).join());
