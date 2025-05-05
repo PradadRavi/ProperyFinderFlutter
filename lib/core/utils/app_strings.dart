@@ -30,4 +30,5 @@ class AppStrings {
   static const String ofPropertyFindApplication =
       "of Property Find Application";
   static const String privacyPolicy = "Privacy Policy";
+  static const String addProperty = "Add Property";
 }

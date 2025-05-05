@@ -12,12 +12,10 @@ class AppTheme {
       color: AppColors.primaryColor,
       applyTextScaling: true,
     ),
-    textButtonTheme: ,
-    primaryTextTheme: ,
-    textSelectionTheme: ,
-    textTheme: ,
-    
-
+    // textButtonTheme: ,
+    // primaryTextTheme: ,
+    // textSelectionTheme: ,
+    // textTheme: ,
   );
 
   static ThemeData darkTheme = ThemeData(

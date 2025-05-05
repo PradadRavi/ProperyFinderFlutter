@@ -3,6 +3,7 @@ import 'package:propertyfinder/core/app_theme/app_theme.dart';
 import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/auth_screen.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/set_up_profile_screen.dart';
+import 'package:propertyfinder/src/home/presentation/views/home_screen.dart';
 import 'package:propertyfinder/src/on_baording/presentation/views/on_boarding_screen.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.theme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: OnBoardingScreen(),
+      home: HomeScreen(),
     );
   }
 }
