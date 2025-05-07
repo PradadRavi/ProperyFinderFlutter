@@ -3,7 +3,7 @@ import 'package:propertyfinder/core/common/widgets/round_rectangle_icon_text.dar
 import 'package:propertyfinder/core/res/app_icons.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 
-abstract class FeatureOfPropertyList {
+class FeatureOfPropertyList {
   static const List<Widget> list = [
     RoundRectangleIconText(
       backgroundColor: Colors.white,

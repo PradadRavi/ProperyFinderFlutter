@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:propertyfinder/core/common/widgets/feature_of_property_list.dart';
+import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
+import 'package:propertyfinder/src/home/presentation/widgets/my_property_widget.dart';
+import 'package:propertyfinder/src/home/presentation/widgets/recent_property_widget.dart';
 import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +12,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.borderGreyColor,
       appBar: AppBar(
+        backgroundColor: AppColors.borderGreyColor,
         actions: [
           Container(
             child: Row(
@@ -28,8 +33,86 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Container(height: 200, width: 200, child: SwipeStackLoop()),
-          GridView.builder(gridDelegate: gridDelegate, itemBuilder: itemBuilder)
+          Container(
+            height: 200,
+            width: double.infinity,
+          ),
+          GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3, mainAxisSpacing: 8, crossAxisSpacing: 8),
+              itemCount: FeatureOfPropertyList.list.length,
+              itemBuilder: (context, index) {
+                return FeatureOfPropertyList.list[index];
+              }),
+          SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "My Property",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              Text("View all"),
+            ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            height: 320,
+            child: ListView.builder(
+                itemCount: 5,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: MyPropertyWidget(),
+                  );
+                }),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Divider(
+            height: 1,
+            thickness: 1,
+            color: Colors.green,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Recent  Property",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              Text("View all"),
+            ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            height: 320,
+            child: ListView.builder(
+                itemCount: 5,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: RecentPropertyWidget(),
+                  );
+                }),
+          ),
           // Container(
           //   height: 200,
           //   child: StackedCardCarousel(
