@@ -29,4 +29,8 @@ class Dice {
   static final NUMBER_GENERATOR = Random();
 }
 
+Static vs Singleton
+static :- tight coupling | loaded when class loaded in memory | basically used for stateless widget | Testing challenges
+SingleTon :- lazy intilized object creation untill needed | loose coupling | Testability
+
 */

@@ -12,13 +12,18 @@ class AppTheme {
       color: AppColors.primaryColor,
       applyTextScaling: true,
     ),
-    // textButtonTheme: ,
-    // primaryTextTheme: ,
-    // textSelectionTheme: ,
-    // textTheme: ,
+    fontFamily: "",
+    textButtonTheme: textButtonTheme,
+    primaryTextTheme: primaryTextTheme,
+    textSelectionTheme: textSelectionTheme,
+    textTheme: textTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
   );
+  static const primaryTextTheme = TextTheme();
+  static const textButtonTheme = TextButtonThemeData(style: ButtonStyle());
+  static const textSelectionTheme = TextSelectionThemeData();
+  static const textTheme = TextTheme();
 }
