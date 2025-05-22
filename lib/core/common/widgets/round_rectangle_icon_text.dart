@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:propertyfinder/core/res/app_icons.dart';
 
 class RoundRectangleIconText extends StatelessWidget {
   const RoundRectangleIconText({

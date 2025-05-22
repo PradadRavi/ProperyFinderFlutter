@@ -19,14 +19,17 @@ class AppBarCustom extends StatelessWidget implements PreferredSize {
 
   Container backButtonForLeading() {
     return Container(
-        margin: EdgeInsets.all(2),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: AppColors.backgroundColor,
-          border: Border.all(
-            color: AppColors.borderGreyColor,
-          ),
+      margin: EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: AppColors.backgroundColor,
+        border: Border.all(
+          color: AppColors.borderGreyColor,
         ),
-        child: Icon(Icons.keyboard_arrow_left));
+      ),
+      child: Icon(
+        Icons.keyboard_arrow_left,
+      ),
+    );
   }
 }

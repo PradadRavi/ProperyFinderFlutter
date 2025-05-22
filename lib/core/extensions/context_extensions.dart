@@ -52,5 +52,6 @@ extension ContextExtensions on BuildContext {
   TextStyle? get pDisplayLarge => Theme.of(this).primaryTextTheme.displayLarge;
 
   // Accent TextTheme
+  // TextStyle get aH1 => Theme.of(this).textSelectionTheme.cursorColor;
   // TextStyle get aH1 => Theme.of(this).textSelectionTheme.;
 }

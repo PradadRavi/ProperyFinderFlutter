@@ -4,7 +4,6 @@ import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 import 'package:propertyfinder/src/home/presentation/widgets/my_property_widget.dart';
 import 'package:propertyfinder/src/home/presentation/widgets/recent_property_widget.dart';
-import 'package:stacked_card_carousel/stacked_card_carousel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
