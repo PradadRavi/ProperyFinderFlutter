@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       home: ChangeNotifierProvider(
         create: (context) => OnboardingProvider(),
-        child: HomeScreen(),
+        child: OnboardingSlideView(),
       ),
     );
   }

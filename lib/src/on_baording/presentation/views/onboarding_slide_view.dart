@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:propertyfinder/core/common/widgets/horizontal_round_button.dart';
+import 'package:propertyfinder/core/extensions/context_extensions.dart';
 import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 import 'package:propertyfinder/core/utils/assets_path.dart';
@@ -30,7 +31,9 @@ class _OnboardingSlideViewState extends State<OnboardingSlideView> {
               alignment: Alignment.topRight,
               child: Text(
                 AppStrings.skip,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                style:
+                    context.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+                textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(

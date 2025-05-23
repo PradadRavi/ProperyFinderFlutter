@@ -1,6 +1,7 @@
 class AppStrings {
   AppStrings._();
-  static const String welcomeToFindProperty = "Welcome to\nProperty Find";
+  static const String appName = "Bhumi Bajar";
+  static const String welcomeToFindProperty = "Welcome to\n$appName";
   static const String readyToExplore =
       '''Ready to explore Agriculture Lands, Rental Properties, New Project and more?''';
   static const String letsLaunch = "Let's launch the app!";
