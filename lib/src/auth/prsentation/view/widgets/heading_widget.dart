@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:propertyfinder/core/extensions/context_extensions.dart';
+import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 
 class HeadingWidget extends StatelessWidget {
@@ -16,23 +18,27 @@ class HeadingWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          firstHeadingName,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
+        Text(firstHeadingName,
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800)),
         const SizedBox(
           height: 8,
         ),
         Row(
           children: [
-            Text(subName),
+            Text(
+              subName,
+              style: context.bodySmall,
+            ),
             if (showEditText)
               Text(
                 AppStrings.edit,
                 style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    decorationColor: Colors.indigo,
-                    color: Colors.indigo),
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  decoration: TextDecoration.underline,
+                  decorationColor: AppColors.primaryColor,
+                  color: AppColors.primaryColor,
+                ),
               )
           ],
         ),

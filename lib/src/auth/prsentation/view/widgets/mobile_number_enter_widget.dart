@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:propertyfinder/core/common/widgets/horizontal_round_button.dart';
+import 'package:propertyfinder/core/extensions/context_extensions.dart';
+import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/widgets/heading_widget.dart';
 
@@ -20,12 +22,25 @@ class MobileNumberEnterWidget extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        TextField(
-          decoration: InputDecoration(
-            prefix: Icon(Icons.add),
-            border: InputBorder.none,
-            // hintText: "98839430",
-          ),
+        Row(
+          children: [
+            Text(
+              "+91 ",
+              style: context.bodyLarge?.copyWith(fontSize: 26),
+            ),
+            Expanded(
+              child: TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "9883943060",
+                  hintStyle: context.bodyLarge?.copyWith(
+                    fontSize: 26,
+                    color: AppColors.mediumGreyColor,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
         Spacer(),
         Align(

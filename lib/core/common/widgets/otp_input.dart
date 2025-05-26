@@ -49,6 +49,7 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
     final double spacing = 12;
     final double totalSpacing = spacing * (widget.box - 1);
     final double boxSize = (screenWidth - totalSpacing - 100) / widget.box;
+    final borderCircular = BorderRadius.circular(14);
     print("${context.width}");
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,6 +64,7 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
               textInputAction: TextInputAction.done,
+              textAlignVertical: TextAlignVertical.center,
               onChanged: (value) {
                 _onOtpChanged(value, index);
               },
@@ -73,13 +75,35 @@ class _OtpInputState extends State<OtpInput> with WidgetsBindingObserver {
                       required isFocused,
                       required maxLength}) =>
                   null,
-              cursorHeight: 18,
+              cursorColor: AppColors.primaryColor,
+              cursorHeight: 4,
+              cursorWidth: 4,
+              cursorRadius: Radius.circular(2),
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(vertical: 22),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                isCollapsed: true,
+                contentPadding: EdgeInsets.only(left: 4, top: 10, bottom: 14),
+                hintText: ".",
+                hintStyle: context.headlineMedium?.copyWith(
+                  color: AppColors.borderGreyColor,
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: borderCircular,
                   borderSide: BorderSide(
                     color: AppColors.borderGreyColor,
+                    width: 1.2,
+                  ), // change color here
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: borderCircular,
+                  borderSide: BorderSide(
+                    color: AppColors.primaryColor,
+                    width: 1.8,
+                  ),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: borderCircular,
+                  borderSide: BorderSide(
+                    color: Colors.green,
                   ),
                 ),
               ),

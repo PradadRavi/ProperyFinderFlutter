@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:propertyfinder/core/common/widgets/otp_input.dart';
+import 'package:propertyfinder/core/extensions/context_extensions.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/widgets/heading_widget.dart';
 
@@ -29,7 +30,10 @@ class OtpEnterWidget extends StatelessWidget {
           height: 30,
         ),
 
-        Text(AppStrings.resendOtpIn)
+        Text(
+          AppStrings.resendOtpIn,
+          style: context.bodySmall,
+        )
 
         // Text(
         //   AppStrings.otpIsOnTheWay,

@@ -8,7 +8,7 @@ class AppBarCustom extends StatelessWidget implements PreferredSize {
   Widget get child => throw UnimplementedError();
 
   @override
-  Size get preferredSize => Size(double.infinity, 40);
+  Size get preferredSize => Size(double.infinity, 50);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class AppBarCustom extends StatelessWidget implements PreferredSize {
 
   Container backButtonForLeading() {
     return Container(
-      margin: EdgeInsets.all(2),
+      margin: EdgeInsets.all(6),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: AppColors.backgroundColor,

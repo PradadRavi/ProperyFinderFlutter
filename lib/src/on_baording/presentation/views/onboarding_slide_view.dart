@@ -17,9 +17,12 @@ class OnboardingSlideView extends StatefulWidget {
 
 class _OnboardingSlideViewState extends State<OnboardingSlideView> {
   int slideCount = 0;
+
+  void test(BuildContext cotex) {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: 40,
@@ -27,6 +30,9 @@ class _OnboardingSlideViewState extends State<OnboardingSlideView> {
         ),
         child: Column(
           children: [
+            SizedBox(
+              height: 10,
+            ),
             Align(
               alignment: Alignment.topRight,
               child: Text(
@@ -53,3 +59,5 @@ class _OnboardingSlideViewState extends State<OnboardingSlideView> {
     );
   }
 }
+/*                            
+*/

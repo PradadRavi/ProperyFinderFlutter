@@ -16,4 +16,5 @@ abstract class AppColors {
   //#DDDDDD
   static const borderGreyColor = Color(0xFFDDDDDD);
   static const darkBorderGreyColor = Color(0xFFDDDDDD);
+  static const mediumGreyColor = Colors.grey;
 }

@@ -11,7 +11,7 @@ class AppStrings {
   static const String enter10DigNumber = "Enter your 10 digit mobile number";
   static const String codeCountry = "+91";
   static const String otpIsOnTheWay = "OTP is on the way";
-  static const String enterTheOtpSent = "Enter the OTP sent to ";
+  static const String enterTheOtpSent = "Enter the OTP sent to 9624211511 ";
   static const String edit = "Edit";
   static const String resendOtpIn = "Resend OTP in ";
 
