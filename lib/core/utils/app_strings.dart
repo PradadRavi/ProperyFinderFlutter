@@ -25,13 +25,17 @@ class AppStrings {
   static const String tpDpVillageMaps = "TP / DP / \nVillage Maps";
   static const String newProject = "New\nProject";
   static const String npaProperty = "NPA\nProperty";
-  static const String agreeToThe = "Agree to the";
-  static const String termsOfUse = "Terms of Use";
-  static const String and = "and";
-  static const String ofPropertyFindApplication =
-      "of Property Find Application";
-  static const String privacyPolicy = "Privacy Policy";
+  static const String agreeToThe = "Agree to the ";
+  static const String termsOfUse = "Terms of Use ";
+  static const String and = "and ";
+  static const String ofPropertyFindApplication = "of $appName Application ";
+  static const String privacyPolicy = "Privacy Policy ";
   static const String addProperty = "Add Property";
+  static const String district = "District";
+  static const String taluka = "Taluka";
+  static const String selectDistrict = "Select District";
+  static const String selectTaluka = "Select Taluka";
+  static const String your = "Your";
 
   //Onboarding
   static const List<Map<String, String>> onBoardingText = [
@@ -65,4 +69,8 @@ class AppStrings {
   static const String notificationDummySubtitle =
       '''Your property is under review and will be approved 
 within 48 hours.''';
+// Choose your Location
+  static const String chooseYourLocation = "Choose your Location";
+  static const String selectALocationToStartExploring =
+      "Select a location to start exploring available properties";
 }

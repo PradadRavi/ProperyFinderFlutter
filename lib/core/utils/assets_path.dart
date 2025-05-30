@@ -9,4 +9,6 @@ class AssetsPath {
   static const newProjectSvg = "${basePath}new_project.svg";
   static const npaPropertySvg = "${basePath}npa_property.svg";
   static const arrowSvg = "${basePath}arrow.svg";
+  static const new_project_pop_up_imageJpg =
+      "${basePath}new_project_pop_up_image.jpg";
 }

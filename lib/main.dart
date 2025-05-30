@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:propertyfinder/core/app_theme/app_theme.dart';
+import 'package:propertyfinder/core/common/widgets/choose_your_location.dart';
+import 'package:propertyfinder/core/common/widgets/new_project_pop_up.dart';
 import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/src/add_property/presentation/views/add_property_view.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/auth_screen.dart';
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       home: ChangeNotifierProvider(
         create: (context) => OnboardingProvider(),
-        child: SetUpProfileScreen(),
+        child: NewProjectPopUp(),
       ),
     );
   }

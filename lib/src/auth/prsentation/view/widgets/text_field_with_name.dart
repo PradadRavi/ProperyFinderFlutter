@@ -4,7 +4,11 @@ import 'package:propertyfinder/core/res/app_colors.dart';
 class TextFieldWithName extends StatelessWidget {
   const TextFieldWithName({
     super.key,
+    required this.fieldName,
+    required this.controller,
   });
+  final String fieldName;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +20,17 @@ class TextFieldWithName extends StatelessWidget {
           height: 10,
         ),
         Text(
-          "Your Name",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+          fieldName,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         SizedBox(
           height: 4,
         ),
         TextField(
+          controller: controller,
           decoration: InputDecoration(
             focusColor: AppColors.borderGreyColor,
             border: OutlineInputBorder(

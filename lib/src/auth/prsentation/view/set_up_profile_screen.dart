@@ -1,13 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:propertyfinder/core/common/widgets/app_bar_custom.dart';
+import 'package:propertyfinder/core/common/widgets/district_select_dropdown_widget.dart';
+import 'package:propertyfinder/core/common/widgets/horizontal_round_button.dart';
+import 'package:propertyfinder/core/common/widgets/taluka_select_dropdown_widget.dart';
 import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/widgets/heading_widget.dart';
 import 'package:propertyfinder/src/auth/prsentation/view/widgets/text_field_with_name.dart';
 
-class SetUpProfileScreen extends StatelessWidget {
-  SetUpProfileScreen({super.key});
+class SetUpProfileScreen extends StatefulWidget {
+  const SetUpProfileScreen({
+    super.key,
+  });
+
+  @override
+  State<SetUpProfileScreen> createState() => _SetUpProfileScreenState();
+}
+
+class _SetUpProfileScreenState extends State<SetUpProfileScreen> {
   bool checkBoxValue = false;
+  late final TextEditingController nameController;
+  late final TextEditingController emailController;
+  late final TextEditingController mobileNumberController;
+  @override
+  void initState() {
+    nameController = TextEditingController();
+    emailController = TextEditingController();
+    mobileNumberController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    mobileNumberController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,37 +53,25 @@ class SetUpProfileScreen extends StatelessWidget {
               firstHeadingName: AppStrings.setUpProfile,
               subName: AppStrings.enterTheRequiredDetailsBelow,
             ),
-            TextFieldWithName(),
-            TextFieldWithName(),
-            TextFieldWithName(),
-            TextFieldWithName(),
-            Text(
-              "Your District",
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+            TextFieldWithName(
+              fieldName: "Your Name",
+              controller: nameController,
             ),
-            Container(
-              height: 50,
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(
-                horizontal: 10,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  20,
-                ),
-                border: Border.all(
-                  color: AppColors.borderGreyColor,
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Select district"),
-                  Icon(
-                    Icons.keyboard_arrow_right,
-                  )
-                ],
-              ),
+            TextFieldWithName(
+              fieldName: "Email",
+              controller: emailController,
+            ),
+            TextFieldWithName(
+              fieldName: "Mobile Number",
+              controller: mobileNumberController,
+            ),
+            DistrictSelectDropdownWidget(
+              fieldName: "${AppStrings.your} ${AppStrings.district}",
+              hintName: AppStrings.selectDistrict,
+            ),
+            TalukaSelectDropdownWidget(
+              fieldName: "${AppStrings.your} ${AppStrings.taluka}",
+              hintName: AppStrings.selectTaluka,
             ),
 
             // Container(
@@ -90,16 +107,36 @@ class SetUpProfileScreen extends StatelessWidget {
             //       ],
             //   ),
             // )
+            SizedBox(
+              height: 4,
+            ),
             Row(
               children: [
-                SizedBox(
-                  height: 20,
-                  width: 20,
-                  child: Checkbox(
-                    value: checkBoxValue,
-                    onChanged: (value) {
-                      checkBoxValue = value ?? false;
-                    },
+                Padding(
+                  padding: EdgeInsets.only(
+                    bottom: 6,
+                  ),
+                  child: Transform.scale(
+                    scale: 1.2,
+                    child: Checkbox(
+                      value: checkBoxValue,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          checkBoxValue = value ?? false;
+                        });
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                          4,
+                        ),
+                      ),
+                      side: const BorderSide(
+                        width: 1,
+                        color: AppColors.borderGreyColor,
+                      ),
+                      activeColor: AppColors.primaryColor,
+                      checkColor: Colors.white,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -107,16 +144,64 @@ class SetUpProfileScreen extends StatelessWidget {
                     // strutStyle: ,
                     text: TextSpan(
                       children: [
-                        TextSpan(text: AppStrings.agreeToThe),
-                        TextSpan(text: AppStrings.termsOfUse),
-                        TextSpan(text: AppStrings.and),
-                        TextSpan(text: AppStrings.privacyPolicy),
-                        TextSpan(text: AppStrings.ofPropertyFindApplication)
+                        TextSpan(
+                          text: AppStrings.agreeToThe,
+                          style: TextStyle(
+                              height: 1.2,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.black),
+                        ),
+                        TextSpan(
+                          text: AppStrings.termsOfUse,
+                          style: TextStyle(
+                              height: 1.2,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                              color: AppColors.primaryColor),
+                        ),
+                        TextSpan(
+                          text: AppStrings.and,
+                          style: TextStyle(
+                              height: 1.2,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.black),
+                        ),
+                        TextSpan(
+                          text: AppStrings.privacyPolicy,
+                          style: TextStyle(
+                            height: 1.2,
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                            color: AppColors.primaryColor,
+                          ),
+                        ),
+                        TextSpan(
+                          text: AppStrings.ofPropertyFindApplication,
+                          style: TextStyle(
+                            height: 1.2,
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                          ),
+                        )
                       ],
                     ),
                   ),
                 ),
               ],
+            ),
+            Spacer(),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: HorizontalRoundButton(
+                onPressed: () {},
+                name: AppStrings.continues,
+              ),
+            ),
+            SizedBox(
+              height: 16,
             )
           ],
         ),
