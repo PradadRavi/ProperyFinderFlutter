@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:propertyfinder/core/common/widgets/horizontal_round_button.dart';
+import 'package:propertyfinder/core/common/widgets/new_project_pop_up.dart';
 import 'package:propertyfinder/core/extensions/context_extensions.dart';
 import 'package:propertyfinder/core/res/app_colors.dart';
 import 'package:propertyfinder/core/utils/app_strings.dart';
@@ -45,8 +46,16 @@ class MobileNumberEnterWidget extends StatelessWidget {
         Spacer(),
         Align(
           alignment: Alignment.centerRight,
-          child:
-              HorizontalRoundButton(onPressed: () {}, name: AppStrings.getOtp),
+          child: HorizontalRoundButton(
+              onPressed: () {
+                showFullScreenDialog(context);
+                // showDialog(
+                //     context: context,
+                //     builder: (BuildContext context) {
+                //       return NewProjectPopUp();
+                //     });
+              },
+              name: AppStrings.getOtp),
         ),
         const SizedBox(
           height: 20,

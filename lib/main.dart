@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       home: ChangeNotifierProvider(
         create: (context) => OnboardingProvider(),
-        child: NewProjectPopUp(),
+        child: AuthScreen(),
       ),
     );
   }

@@ -73,4 +73,5 @@ within 48 hours.''';
   static const String chooseYourLocation = "Choose your Location";
   static const String selectALocationToStartExploring =
       "Select a location to start exploring available properties";
+  static const String rupeeSymbol = "\u20B9";
 }

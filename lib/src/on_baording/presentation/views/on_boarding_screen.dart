@@ -126,9 +126,12 @@ class OnBoardingScreen extends StatelessWidget {
             Spacer(),
             Align(
               alignment: Alignment.bottomRight,
-              child: HorizontalRoundButton(
-                onPressed: () {},
-                name: AppStrings.letsStart,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child: HorizontalRoundButton(
+                  onPressed: () {},
+                  name: AppStrings.letsStart,
+                ),
               ),
             ),
             const SizedBox(
